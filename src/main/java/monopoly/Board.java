@@ -1,5 +1,5 @@
 package monopoly;
 
 public class Board {
-    private Square[] contains;
+    private Square[] contains2;
 }
