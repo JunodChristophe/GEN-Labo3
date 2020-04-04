@@ -9,7 +9,7 @@ class BoardTest {
     @Test
     void testClassExist(){
         try {
-            Class.forName("monopoly.Board2");
+            Class.forName("monopoly.Board");
         } catch (ClassNotFoundException e) {
             Assertions.fail("Manque la classe Board");
         }
