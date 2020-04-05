@@ -1,5 +1,5 @@
 package monopoly;
 
 public class Piece {
-    private Square isOn;
+    private Square location;
 }

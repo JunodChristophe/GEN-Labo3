@@ -1,5 +1,9 @@
 package monopoly;
 
 public class Board {
-    private Square[] contains2;
+    private Square[] squares;
+
+    public Board(){
+        this.squares = new Square[40];
+    }
 }
