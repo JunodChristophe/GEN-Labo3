@@ -1,6 +1,6 @@
 package monopoly;
 
-public class Board {
+public class  Board {
     private Square[] squares;
 
     public Board(){
