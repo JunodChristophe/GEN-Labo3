@@ -9,11 +9,6 @@ import static org.junit.jupiter.api.Assertions.*;
 class MonopolyGameTest {
 
     @Test
-    void testNumberofPlayer() {
-        
-    }
-
-    @Test
     void testClassExist(){
         try {
             Class.forName("monopoly.MonopolyGame");
