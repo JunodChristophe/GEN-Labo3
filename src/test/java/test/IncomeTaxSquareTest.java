@@ -9,9 +9,9 @@ class IncomeTaxSquareTest {
     @Test
     void testClassExist(){
         try {
-            Class.forName("monopoly.IncomeTaxSquareTest");
+            Class.forName("monopoly.IncomeTaxSquare");
         } catch (ClassNotFoundException e) {
-            Assertions.fail("Manque la classe IncomeTaxSquareTest");
+            Assertions.fail("Manque la classe IncomeTaxSquare");
         }
     }
 }

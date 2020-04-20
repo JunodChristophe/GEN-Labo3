@@ -9,9 +9,9 @@ class CupTest {
     @Test
     void testClassExist(){
         try {
-            Class.forName("monopoly.CupTest");
+            Class.forName("monopoly.Cup");
         } catch (ClassNotFoundException e) {
-            Assertions.fail("Manque la classe CupTest");
+            Assertions.fail("Manque la classe Cup");
         }
     }
 }

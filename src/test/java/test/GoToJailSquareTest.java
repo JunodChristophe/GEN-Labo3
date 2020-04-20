@@ -9,9 +9,9 @@ class GoToJailSquareTest {
     @Test
     void testClassExist(){
         try {
-            Class.forName("monopoly.GoToJailSquareTest");
+            Class.forName("monopoly.GoToJailSquare");
         } catch (ClassNotFoundException e) {
-            Assertions.fail("Manque la classe GoToJailSquareTest");
+            Assertions.fail("Manque la classe GoToJailSquare");
         }
     }
 }
