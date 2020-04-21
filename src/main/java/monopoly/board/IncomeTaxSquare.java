@@ -1,4 +1,6 @@
-package monopoly;
+package monopoly.board;
+
+import monopoly.Player;
 
 public class IncomeTaxSquare extends Square {
 
@@ -6,10 +8,10 @@ public class IncomeTaxSquare extends Square {
         super(name);
     }
 
-    @Override
+    /*@Override
     public void landedOn(Player player) {
         int money = player.getNetWorth();
         money = (int) Math.min(200, 0.1*money);
         player.reduceCash(money);
-    }
+    }*/
 }

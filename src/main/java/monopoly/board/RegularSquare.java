@@ -1,4 +1,6 @@
-package monopoly;
+package monopoly.board;
+
+import monopoly.Player;
 
 public class RegularSquare extends Square {
 
@@ -6,8 +8,8 @@ public class RegularSquare extends Square {
         super(name);
     }
 
-    @Override
+    /*@Override
     public void landedOn(Player player) {
         //do nothing
-    }
+    }*/
 }
