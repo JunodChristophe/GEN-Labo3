@@ -1,20 +1,22 @@
 package monopoly;
 
-import java.awt.*;
+import monopoly.board.Board;
+import monopoly.board.Square;
 
 public class Player {
     private Piece piece;
-    private MonopolyGame game;
-    private Dice dice;
+    private Dice[] dices;
     private Board board;
     private int cash;
+    private String name;
 
-    public Player(MonopolyGame game, Board board, Dice dice){
-        this.piece = new Piece();
-        this.dice = dice;
-        this.game = game;
+    public Player(Board board, Dice[] dices, int numPlayer){
+        this.piece = new Piece(board.getSquare(0));
+        this.dices = dices;
         this.board = board;
         this.cash = 1500;
+        this.name = "Player " + numPlayer;
+        this.piece = new Piece(board.getSquare(0));
     }
 
     public void addCash(int income) {
@@ -22,8 +24,18 @@ public class Player {
     }
 
     public void takeTurn() {
+        int fv, fvTot = 0;
+        for (Dice dice : dices) {
+            dice.roll();
+            fv = dice.getFaceValue();
+            fvTot += fv;
+        }
+        System.out.println(name + " rolled " + fvTot);
+        Square oldLoc = piece.getLocation();
+        Square newLoc = board.getSquare(oldLoc, fvTot);
+        piece.setLocation(newLoc);
+        System.out.println(name + " landed on " + piece.getLocation().getName());
     }
-
 
     public int getNetWorth() {
         return cash;

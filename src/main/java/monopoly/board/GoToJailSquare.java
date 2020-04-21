@@ -1,6 +1,6 @@
-package monopoly;
+package monopoly.board;
 
-import java.util.Objects;
+import monopoly.Player;
 
 public class GoToJailSquare extends Square {
 
@@ -9,7 +9,7 @@ public class GoToJailSquare extends Square {
     }
 
     //?????????????
-    @Override
+    /*@Override
     public void landedOn(Player player) {
         player.getPiece().setLocation(new Square("No idea") {
             @Override
@@ -17,5 +17,5 @@ public class GoToJailSquare extends Square {
 
             }
         });
-    }
+    }*/
 }
