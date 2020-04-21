@@ -9,7 +9,7 @@ public class  Board {
     public Board(int size){
         this.squares = new ArrayList<Square>(size);
         squares.add(0, new Square("Go"));
-        for (int i = 1; i < size + 1; ++i) {
+        for (int i = 1; i < size; ++i) {
             squares.add(i, new Square("Square " + i));
         }
     }
