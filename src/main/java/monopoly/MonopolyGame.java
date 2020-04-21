@@ -1,14 +1,15 @@
 package monopoly;
 
-import java.util.Random;
-import java.util.Set;
+import monopoly.board.Board;
+
+import java.util.ArrayList;
 
 public class MonopolyGame {
     private final int MAX_ROUNDS = 20;
     private int roundCount;
-    private Set<Player> players;
+    private ArrayList<Player> players = new ArrayList<Player>();
     private Board board;
-    private Dice dice;
+    private Dice[] dices;
 
     public MonopolyGame(int nbPlayer){
         //Run the game as a simulation requiring no user input, other than the number of
@@ -17,16 +18,22 @@ public class MonopolyGame {
             throw new RuntimeException("Number must be between 2 and 8");
         }
         this.roundCount = 0;
-        this.dice = new Dice();
-        this.board = new Board();
-        int numberOfPlayers = nbPlayer;
-        for(int i = 0; i < numberOfPlayers; ++i) players.add(new Player(this, board, dice));
+        this.dices = new Dice[]{new Dice(), new Dice()};
+        this.board = new Board(40);
+        for(int i = 0; i < nbPlayer; ++i) {
+            players.add(new Player(board, dices, i+1));
+        }
     }
     
     public void playGame(){
-        for(int round = 0; round < this.MAX_ROUNDS; ++round){
+        System.out.println("New Game");
+        System.out.println("Number of player : " + players.size());
+        System.out.println("Game Start");
+        for(roundCount = 0; roundCount < this.MAX_ROUNDS; ++roundCount){
+            System.out.println("\nRound : " + roundCount);
             this.playRound();
         }
+        System.out.println("Game Over");
     }
 
     private void playRound(){
@@ -37,8 +44,6 @@ public class MonopolyGame {
 
     public static void main(String... args){
         MonopolyGame MpG = new MonopolyGame(Integer.parseInt(args[0]));
-                                    
+        MpG.playGame();
     }
-
-
 }

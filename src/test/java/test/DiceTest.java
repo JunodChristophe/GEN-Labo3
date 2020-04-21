@@ -5,8 +5,8 @@ import org.junit.jupiter.api.*;
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 class DiceTest {
-    private int MAX_FACE_VALUE = 12;
-    private int MIN_FACE_VALUE = 2;
+    private int MAX_FACE_VALUE = 6;
+    private int MIN_FACE_VALUE = 1;
     private Dice dice;
 
     @BeforeAll
