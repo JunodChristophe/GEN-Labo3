@@ -3,6 +3,7 @@ package monopoly;
 import monopoly.board.Board;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class MonopolyGame {
     private final int MAX_ROUNDS = 20;
@@ -10,6 +11,20 @@ public class MonopolyGame {
     private ArrayList<Player> players = new ArrayList<Player>();
     private Board board;
     private Dice[] dices;
+
+
+    public static int init() {
+        int numberOfPlayer;
+        while(true) {
+            System.out.println("Select the number of player between 2 and 8");
+            Scanner scanner = new Scanner(System.in);
+            if(scanner.hasNextInt()) {
+                numberOfPlayer = Integer.parseInt(scanner.nextLine());
+                break;
+            }
+        }
+        return numberOfPlayer;
+    }
 
     public MonopolyGame(int nbPlayer){
         //Run the game as a simulation requiring no user input, other than the number of
@@ -24,12 +39,12 @@ public class MonopolyGame {
             players.add(new Player(board, dices, i+1));
         }
     }
-    
+
     public void playGame(){
         System.out.println("New Game");
         System.out.println("Number of player : " + players.size());
         System.out.println("Game Start");
-        for(roundCount = 0; roundCount < this.MAX_ROUNDS; ++roundCount){
+        for(roundCount = 1; roundCount <= this.MAX_ROUNDS; ++roundCount){
             System.out.println("\nRound : " + roundCount);
             this.playRound();
         }
@@ -43,7 +58,9 @@ public class MonopolyGame {
     }
 
     public static void main(String... args){
-        MonopolyGame MpG = new MonopolyGame(Integer.parseInt(args[0]));
+
+        int numberOfPlayer = (args.length == 1) ? Integer.parseInt(args[0]) : init();
+        MonopolyGame MpG = new MonopolyGame(numberOfPlayer);
         MpG.playGame();
     }
 }
